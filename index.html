@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-UbVTEEsEeuKgSWV9qFCucAROdLLfmwonkE7oyXCWzRA='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
 
   <!-- ── SEO PRIMAIRE ── -->
-  <title>Lucile Le Pocreau – Diététicienne Grenoble</title>
+  <title>Lucile Le Pocreau – Diététicienne &amp; Drainage Lymphatique Grenoble</title>
   <meta name="description" content="Lucile Le Pocreau, diététicienne nutritionniste à Grenoble (place Sainte-Claire). Spécialisée santé féminine : endométriose, SOPK, grossesse, ménopause. Drainage lymphatique brésilien. Prise de RDV sur Doctolib."/>
   <meta name="keywords" content="diététicienne Grenoble, nutritionniste Grenoble, drainage lymphatique Grenoble, endométriose alimentation, SOPK diète, grossesse nutrition, ménopause diététique, Lucile Le Pocreau"/>
   <meta name="author" content="Lucile Le Pocreau"/>
@@ -749,12 +751,9 @@
 
       .drainage-grid { grid-template-columns: 1fr; gap: 36px; }
       .drainage-visual-photo { height: 260px; border-radius: 40px 12px 40px 12px; }
-      #drainage .btn-outline { margin-left: 0; }
 
       .tarifs-grid { grid-template-columns: 1fr; gap: 16px; }
       .tarif-group { padding: 24px 20px; }
-
-      .conseils-grid { grid-template-columns: 1fr; gap: 14px; }
 
       .contact-grid { grid-template-columns: 1fr; gap: 36px; }
       .contact-grid iframe { height: 240px; }
@@ -1222,6 +1221,7 @@
             <div class="review-meta">Corentin Pallandre · <span class="review-date">il y a 2 ans</span></div>
             <p class="review-text">« Lucile est très professionnelle et à l'écoute. Je suis très content de notre suivi diététique. »</p>
           </div>
+        </div>
         </div>
       </div>
       <div class="reviews-dots" id="reviewsDots" role="tablist" aria-label="Navigation avis"></div>

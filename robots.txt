@@ -1,28 +1,5 @@
-# robots.txt – lucile-diet.fr
-
 User-agent: *
-Allow: /
-
-# Crawlers IA explicitement autorisés
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: anthropic-ai
+Content-Signal: search=yes,ai-train=no,use=reference
 Allow: /
 
 Sitemap: https://lucile-diet.fr/sitemap.xml

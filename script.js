@@ -48,6 +48,16 @@ if (burger && mobileMenu) {
   });
 }
 
+// ── RDV FLOTTANT : apparaît une fois le hero dépassé (absent des pages articles) ──
+const floatingRdv = document.getElementById('floatingRdv');
+const hero = document.getElementById('accueil');
+if (floatingRdv && hero) {
+  const rdvObserver = new IntersectionObserver(function (entries) {
+    floatingRdv.classList.toggle('visible', !entries[0].isIntersecting);
+  }, { rootMargin: '-10% 0px 0px 0px' });
+  rdvObserver.observe(hero);
+}
+
 // ── SCROLL FLUIDE POUR LES ANCRES INTERNES (menu, boutons "#...") ──
 // Fait exprès de NE PAS passer par le CSS `scroll-behavior: smooth` global :
 // ça entrait en conflit avec la restauration native du scroll au clic sur

@@ -530,6 +530,27 @@
       letter-spacing: 0.08em; text-transform: uppercase;
     }
 
+    /* ── RDV FLOTTANT (apparaît après le hero, desktop + mobile) ── */
+    .floating-rdv {
+      position: fixed; right: 24px; bottom: 24px; z-index: 140;
+      opacity: 0; transform: translateY(16px); pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .floating-rdv.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .floating-rdv a {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--brun); color: var(--creme);
+      text-decoration: none; padding: 14px 28px; border-radius: 40px;
+      font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
+      box-shadow: 0 8px 24px rgba(92,61,46,0.28);
+      transition: background 0.25s, transform 0.2s;
+    }
+    .floating-rdv a:hover { background: var(--profond); transform: translateY(-2px); }
+    @media (max-width: 640px) {
+      .floating-rdv { right: 16px; bottom: 16px; }
+      .floating-rdv a { padding: 12px 22px; font-size: 0.78rem; }
+    }
+
     /* ── WAVE ── */
     .wave-divider { width: 100%; overflow: hidden; line-height: 0; }
     .wave-divider svg { display: block; width: 100%; }
@@ -958,6 +979,11 @@
   <a href="#contact" class="mobile-link">Contact</a>
   <a href="https://www.doctolib.fr/dieteticien/grenoble/lucile-le-pocreau" target="_blank" rel="noopener" class="mobile-rdv">Prendre RDV</a>
 </nav>
+
+<!-- RDV FLOTTANT -->
+<div class="floating-rdv" id="floatingRdv">
+  <a href="https://www.doctolib.fr/dieteticien/grenoble/lucile-le-pocreau" target="_blank" rel="noopener">Prendre RDV</a>
+</div>
 
 <!-- HERO -->
 <section id="accueil" aria-label="Accueil">

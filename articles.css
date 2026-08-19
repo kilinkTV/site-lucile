@@ -21,6 +21,13 @@ body { font-family: 'Lato', sans-serif; background: var(--creme); color: var(--t
 .article-body p { font-size: 1rem; margin-bottom: 18px; }
 .article-body ul { margin: 0 0 18px 22px; }
 .article-body li { margin-bottom: 8px; font-size: 1rem; }
+.credentials-list {
+  display: grid; grid-template-columns: auto 1fr; column-gap: 6px; row-gap: 8px;
+  margin-bottom: 18px;
+}
+.credentials-list dt { color: var(--profond); }
+.credentials-list dt::after { content: "\2014"; margin-left: 6px; }
+.credentials-list dd { margin: 0; }
 .direct-answer {
   background: var(--fond); border-left: 3px solid var(--brun);
   padding: 18px 22px; border-radius: 0 12px 12px 0; margin-bottom: 32px;

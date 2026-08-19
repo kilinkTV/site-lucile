@@ -142,11 +142,14 @@
           <span class="tag">Post-partum</span>
           <span class="tag">Ménopause</span>
         </div>
-        <ul class="apropos-credentials" aria-label="Diplômes et formations">
-          <li><strong>BTS Diététique</strong> — Univeria Grenoble, 2021</li>
-          <li><strong>Drainage lymphatique brésilien</strong> — Dubarry Académie, 2026</li>
-          <li><strong>Nutrition et endométriose chez l'adolescente</strong> — Epione, 2024</li>
-        </ul>
+        <dl class="apropos-credentials" aria-label="Diplômes et formations">
+          <dt>BTS Diététique</dt>
+          <dd>Univeria Grenoble, 2021</dd>
+          <dt>Drainage lymphatique brésilien</dt>
+          <dd>Dubarry Académie, 2026</dd>
+          <dt>Nutrition et endométriose chez l'adolescente</dt>
+          <dd>Epione, 2024</dd>
+        </dl>
         <p class="apropos-ids">RPPS 10008231598 · ADELI 389505967</p>
         <p><a href="/a-propos.html" class="card-link">En savoir plus sur mon parcours →</a></p>
       </div>
@@ -287,40 +290,56 @@
           <path d="M4 11a8 8 0 0 0 16 0"/><line x1="4" y1="11" x2="20" y2="11"/>
           <path d="M11 8c.5-1.8 2.2-2.5 3.5-1.8-.8 1.5-2.3 2-3.5 1.8z"/>
         </svg>Suivi diététique</h3>
-        <div class="tarif-line">
-          <span class="tarif-nom">Bilan diététique</span>
-          <span class="tarif-prix">60 €</span>
-        </div>
-        <div class="tarif-line">
-          <span class="tarif-nom">Consultation de suivi</span>
-          <span class="tarif-prix">50 €</span>
-        </div>
-        <div class="tarif-line">
-          <span class="tarif-nom">Tarif étudiant</span>
-          <span class="tarif-prix">40 €</span>
-        </div>
+        <table class="tarif-table">
+          <caption class="sr-only">Tarifs du suivi diététique</caption>
+          <thead>
+            <tr><th class="sr-only" scope="col">Prestation</th><th class="sr-only" scope="col">Tarif</th></tr>
+          </thead>
+          <tbody>
+            <tr class="tarif-line">
+              <td class="tarif-nom">Bilan diététique</td>
+              <td class="tarif-prix">60 €</td>
+            </tr>
+            <tr class="tarif-line">
+              <td class="tarif-nom">Consultation de suivi</td>
+              <td class="tarif-prix">50 €</td>
+            </tr>
+            <tr class="tarif-line">
+              <td class="tarif-nom">Tarif étudiant</td>
+              <td class="tarif-prix">40 €</td>
+            </tr>
+          </tbody>
+        </table>
         <p class="tarif-note">* Le tarif étudiant s'applique sur présentation d'une carte étudiante valide.</p>
       </div>
       <div class="tarif-group">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke="var(--brun)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M12 3.5c3 4 5.5 7.3 5.5 10.3a5.5 5.5 0 1 1-11 0c0-3 2.5-6.3 5.5-10.3z"/>
         </svg>Drainage lymphatique</h3>
-        <div class="tarif-line">
-          <span class="tarif-nom">Corps entier – séance</span>
-          <span class="tarif-prix">90 €</span>
-        </div>
-        <div class="tarif-line">
-          <span class="tarif-nom">Zone au choix – séance</span>
-          <span class="tarif-prix">50 €</span>
-        </div>
-        <div class="tarif-line tarif-line--cure">
-          <span class="tarif-nom">Cure corps entier <span class="tarif-cure-badge">5 séances</span></span>
-          <span class="tarif-prix">360 €</span>
-        </div>
-        <div class="tarif-line tarif-line--cure">
-          <span class="tarif-nom">Cure zone au choix <span class="tarif-cure-badge">5 séances</span></span>
-          <span class="tarif-prix">200 €</span>
-        </div>
+        <table class="tarif-table">
+          <caption class="sr-only">Tarifs du drainage lymphatique</caption>
+          <thead>
+            <tr><th class="sr-only" scope="col">Prestation</th><th class="sr-only" scope="col">Tarif</th></tr>
+          </thead>
+          <tbody>
+            <tr class="tarif-line">
+              <td class="tarif-nom">Corps entier – séance</td>
+              <td class="tarif-prix">90 €</td>
+            </tr>
+            <tr class="tarif-line">
+              <td class="tarif-nom">Zone au choix – séance</td>
+              <td class="tarif-prix">50 €</td>
+            </tr>
+            <tr class="tarif-line tarif-line--cure">
+              <td class="tarif-nom">Cure corps entier <span class="tarif-cure-badge">5 séances</span></td>
+              <td class="tarif-prix">360 €</td>
+            </tr>
+            <tr class="tarif-line tarif-line--cure">
+              <td class="tarif-nom">Cure zone au choix <span class="tarif-cure-badge">5 séances</span></td>
+              <td class="tarif-prix">200 €</td>
+            </tr>
+          </tbody>
+        </table>
         <p class="tarif-note">* Séance de drainage réalisée au cabinet. Durée variable selon la prestation.<br>Les cures incluent 1 séance offerte.</p>
       </div>
     </div>

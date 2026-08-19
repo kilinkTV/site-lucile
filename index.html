@@ -530,8 +530,9 @@
       letter-spacing: 0.08em; text-transform: uppercase;
     }
 
-    /* ── RDV FLOTTANT (apparaît après le hero, desktop + mobile) ── */
+    /* ── RDV FLOTTANT (mobile uniquement, apparaît après le hero) ── */
     .floating-rdv {
+      display: none;
       position: fixed; right: 24px; bottom: 24px; z-index: 140;
       opacity: 0; transform: translateY(16px); pointer-events: none;
       transition: opacity 0.3s ease, transform 0.3s ease;
@@ -547,7 +548,7 @@
     }
     .floating-rdv a:hover { background: var(--profond); transform: translateY(-2px); }
     @media (max-width: 640px) {
-      .floating-rdv { right: 16px; bottom: 16px; }
+      .floating-rdv { display: block; right: 16px; bottom: 16px; }
       .floating-rdv a { padding: 12px 22px; font-size: 0.78rem; }
     }
 
@@ -675,7 +676,8 @@
       padding: 32px 28px; transition: transform 0.25s, box-shadow 0.25s;
     }
     .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(92,61,46,0.1); }
-    .card-icon { font-size: 1.8rem; margin-bottom: 16px; display: block; }
+    .card-icon { margin-bottom: 16px; display: block; }
+    .card-icon svg { width: 30px; height: 30px; }
     .card h3 {
       font-family: 'Playfair Display', serif; font-size: 1.1rem;
       color: var(--profond); margin-bottom: 10px;
@@ -735,7 +737,9 @@
       font-family: 'Playfair Display', serif; font-size: 1.1rem;
       color: var(--profond); margin-bottom: 24px; padding-bottom: 16px;
       border-bottom: 1px solid var(--beige);
+      display: flex; align-items: center; gap: 10px;
     }
+    .tarif-group h3 svg { flex-shrink: 0; width: 22px; height: 22px; }
     .tarif-line {
       display: flex; justify-content: space-between; align-items: baseline;
       padding: 10px 0; border-bottom: 1px dashed rgba(196,168,130,0.4); font-size: 0.92rem;
@@ -1067,37 +1071,61 @@
     </div>
     <div class="cards-grid">
       <article class="card">
-        <span class="card-icon" aria-hidden="true">🌸</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brun)" stroke-width="1.6" stroke-linejoin="round">
+          <circle cx="12" cy="7.8" r="3"/><circle cx="16" cy="10.7" r="3"/><circle cx="14.5" cy="15.4" r="3"/><circle cx="9.5" cy="15.4" r="3"/><circle cx="8" cy="10.7" r="3"/>
+          <circle cx="12" cy="12" r="1.3" fill="var(--brun)" stroke="none"/>
+        </svg></span>
         <h3>Endométriose</h3>
         <p>L'alimentation peut considérablement réduire l'inflammation et les douleurs liées à l'endométriose. Je vous accompagne vers un régime anti-inflammatoire adapté à votre quotidien.</p>
         <a href="/conseils/endometriose-et-alimentation.html" class="card-link">En savoir plus →</a>
       </article>
       <article class="card">
-        <span class="card-icon" aria-hidden="true">⚖️</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+          <path fill="#4A90D9" d="M5.5 8C5.5 6.6 5.8 5.8 6.3 5.2C7.5 6.3 8.2 6.9 8.8 7.6C9.9 5.3 10.8 3.3 12 2.2C13.2 3.3 14.1 5.3 15.2 7.6C15.8 6.9 16.5 6.3 17.7 5.2C18.2 5.8 18.5 6.6 18.5 8C18.5 10.5 17 12.5 14.5 13C13.7 13.15 12.8 13.2 12 13.2C11.2 13.2 10.3 13.15 9.5 13C7 12.5 5.5 10.5 5.5 8Z"/>
+          <rect fill="#4C9A4C" x="11.2" y="13" width="1.6" height="4.5" rx="0.8"/>
+          <path fill="#4C9A4C" d="M12 15.5C8 14.5 4.5 15.3 3.5 18C6.5 18.8 10.5 18 12 15.5Z"/>
+          <path fill="#4C9A4C" d="M12 15.5C16 14.5 19.5 15.3 20.5 18C17.5 18.8 13.5 18 12 15.5Z"/>
+        </svg></span>
         <h3>SMOP <span style="font-size:0.85rem;color:var(--brun);font-family:'Lato',sans-serif;font-weight:400;">(SOPK)</span></h3>
         <p>Le Syndrome Métabolique Ovarien Polyendocrinien se manifeste par des déséquilibres hormonaux et métaboliques. L'alimentation est un levier puissant pour un bon équilibre glycémique, soutenir l'ovulation et atténuer les symptômes au quotidien.</p>
         <a href="/conseils/sopk-equilibre-glycemique.html" class="card-link">En savoir plus →</a>
       </article>
       <article class="card">
-        <span class="card-icon" aria-hidden="true">🤰</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brun)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="14.8" cy="4.3" r="1.7"/>
+          <path d="M15.7 6.2C17 6.5 17.8 7.8 17.6 9.2C19.3 9.8 20 11.8 19 13.4C18.3 14.6 17 15 15.8 14.7C16 16 16 18 15.8 20.5L16.8 21.3L13 21.3L13.9 20.5C13.7 17 13.8 14 13.2 11.5C12.6 9 13 6.8 14.3 6.1Z"/>
+        </svg></span>
         <h3>Grossesse</h3>
         <p>Bien manger pendant la grossesse, c'est prendre soin de vous et de votre bébé. Je vous guide avec des conseils pratiques et bienveillants tout au long de cette période.</p>
         <a href="/conseils/nutrition-grossesse.html" class="card-link">En savoir plus →</a>
       </article>
       <article class="card">
-        <span class="card-icon" aria-hidden="true">🌱</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brun)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20V10"/>
+          <path d="M12 12c0-3 -2.5-5-6-5 0 3.5 2.5 6 6 6"/>
+          <path d="M12 10c0-3 2.5-5 6-5 0 3.5 -2.5 6 -6 6"/>
+          <line x1="7" y1="20" x2="17" y2="20"/>
+        </svg></span>
         <h3>Fertilité</h3>
         <p>La nutrition joue un rôle clé dans la fertilité féminine. Optimisons ensemble votre alimentation pour soutenir votre projet de maternité.</p>
         <a href="/conseils/alimentation-fertilite.html" class="card-link">En savoir plus →</a>
       </article>
       <article class="card">
-        <span class="card-icon" aria-hidden="true">👶</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brun)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="7.8" r="3.5"/>
+          <path d="M11.3 4.5c-.4-1.1.6-2 1.7-1.6"/>
+          <path d="M10.3 7.6q.7.6 1.4 0"/>
+          <path d="M12.3 7.6q.7.6 1.4 0"/>
+          <path d="M8.2 12.3c0-1.3 1.7-2.1 3.8-2.1s3.8.8 3.8 2.1v3.2c0 3.1-1.7 5-3.8 5s-3.8-1.9-3.8-5v-3.2z"/>
+        </svg></span>
         <h3>Post-partum</h3>
         <p>Après l'accouchement, votre corps a besoin de récupérer. Un suivi nutritionnel adapté vous aide à retrouver énergie et équilibre, en douceur.</p>
         <a href="/conseils/nutrition-post-partum.html" class="card-link">En savoir plus →</a>
       </article>
       <article class="card">
-        <span class="card-icon" aria-hidden="true">🌙</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brun)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15.5 4.5a8 8 0 1 0 0 15 6.5 6.5 0 0 1 0-15z"/>
+        </svg></span>
         <h3>Ménopause</h3>
         <p>La ménopause s'accompagne de bouleversements hormonaux que l'alimentation peut adoucir. Je vous aide à traverser cette transition avec sérénité.</p>
         <a href="/conseils/nutrition-menopause.html" class="card-link">En savoir plus →</a>
@@ -1155,7 +1183,10 @@
     <h2 class="section-title" id="tarifs-title">Consultations <em>&amp; soins</em></h2>
     <div class="tarifs-grid">
       <div class="tarif-group">
-        <h3>🥗 Suivi diététique</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="var(--brun)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 11a8 8 0 0 0 16 0"/><line x1="4" y1="11" x2="20" y2="11"/>
+          <path d="M11 8c.5-1.8 2.2-2.5 3.5-1.8-.8 1.5-2.3 2-3.5 1.8z"/>
+        </svg>Suivi diététique</h3>
         <div class="tarif-line">
           <span class="tarif-nom">Bilan diététique</span>
           <span class="tarif-prix">60 €</span>
@@ -1171,7 +1202,9 @@
         <p class="tarif-note">* Le tarif étudiant s'applique sur présentation d'une carte étudiante valide.</p>
       </div>
       <div class="tarif-group">
-        <h3>💆 Drainage lymphatique</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="var(--brun)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3.5c3 4 5.5 7.3 5.5 10.3a5.5 5.5 0 1 1-11 0c0-3 2.5-6.3 5.5-10.3z"/>
+        </svg>Drainage lymphatique</h3>
         <div class="tarif-line">
           <span class="tarif-nom">Corps entier – séance</span>
           <span class="tarif-prix">90 €</span>
@@ -1188,7 +1221,7 @@
           <span class="tarif-nom">Cure zone au choix <span class="tarif-cure-badge">5 séances</span></span>
           <span class="tarif-prix">200 €</span>
         </div>
-        <p class="tarif-note">* Séance de drainage réalisée au cabinet. Durée variable selon la prestation.<br>✨ Les cures incluent 1 séance offerte.</p>
+        <p class="tarif-note">* Séance de drainage réalisée au cabinet. Durée variable selon la prestation.<br>Les cures incluent 1 séance offerte.</p>
       </div>
     </div>
     <div class="tarifs-cta">

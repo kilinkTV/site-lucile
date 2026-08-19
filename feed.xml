@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conseils nutrition — Lucile Le Pocreau</title>
+    <link>https://lucile-diet.fr/#conseils</link>
+    <atom:link href="https://lucile-diet.fr/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Conseils nutrition d'une diététicienne-nutritionniste à Grenoble, spécialisée en santé de la femme : endométriose, SOPK, fertilité, grossesse, post-partum, ménopause.</description>
+    <language>fr-fr</language>
+    <lastBuildDate>Wed, 19 Aug 2026 08:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>Grossesse : quels repères nutritionnels suivre ?</title>
+      <link>https://lucile-diet.fr/conseils/nutrition-grossesse.html</link>
+      <guid>https://lucile-diet.fr/conseils/nutrition-grossesse.html</guid>
+      <pubDate>Wed, 19 Aug 2026 08:00:00 +0000</pubDate>
+      <description>Quels sont les repères nutritionnels recommandés pendant la grossesse ? Le point sur les recommandations officielles, avec une diététicienne à Grenoble.</description>
+    </item>
+    <item>
+      <title>Ménopause : quels ajustements alimentaires ?</title>
+      <link>https://lucile-diet.fr/conseils/nutrition-menopause.html</link>
+      <guid>https://lucile-diet.fr/conseils/nutrition-menopause.html</guid>
+      <pubDate>Wed, 19 Aug 2026 08:00:00 +0000</pubDate>
+      <description>Quels ajustements alimentaires à la ménopause ? Le point sur les recommandations des sociétés savantes, avec une diététicienne à Grenoble.</description>
+    </item>
+    <item>
+      <title>Fertilité et alimentation : ce que dit la science ?</title>
+      <link>https://lucile-diet.fr/conseils/alimentation-fertilite.html</link>
+      <guid>https://lucile-diet.fr/conseils/alimentation-fertilite.html</guid>
+      <pubDate>Wed, 19 Aug 2026 08:00:00 +0000</pubDate>
+      <description>Quel est le lien entre alimentation et fertilité ? Le point sur les données scientifiques actuelles, avec une diététicienne spécialisée à Grenoble.</description>
+    </item>
+    <item>
+      <title>Drainage lymphatique brésilien : mythes et réalité</title>
+      <link>https://lucile-diet.fr/conseils/drainage-lymphatique-mythes-realite.html</link>
+      <guid>https://lucile-diet.fr/conseils/drainage-lymphatique-mythes-realite.html</guid>
+      <pubDate>Thu, 02 Jul 2026 08:00:00 +0000</pubDate>
+      <description>Que peut vraiment faire le drainage lymphatique brésilien, et que ne peut-il pas faire ? Le point sur les idées reçues avec une praticienne à Grenoble.</description>
+    </item>
+    <item>
+      <title>Nutrition post-partum : bien manger après l'accouchement</title>
+      <link>https://lucile-diet.fr/conseils/nutrition-post-partum.html</link>
+      <guid>https://lucile-diet.fr/conseils/nutrition-post-partum.html</guid>
+      <pubDate>Sat, 20 Jun 2026 08:00:00 +0000</pubDate>
+      <description>Quels sont les besoins nutritionnels après l'accouchement ? Le point sur la récupération post-partum, avec ou sans allaitement.</description>
+    </item>
+    <item>
+      <title>SOPK (SMOP) : le rôle de l'alimentation dans l'équilibre glycémique</title>
+      <link>https://lucile-diet.fr/conseils/sopk-equilibre-glycemique.html</link>
+      <guid>https://lucile-diet.fr/conseils/sopk-equilibre-glycemique.html</guid>
+      <pubDate>Wed, 03 Jun 2026 08:00:00 +0000</pubDate>
+      <description>Comment l'alimentation aide à réguler la glycémie et soutenir l'ovulation en cas de SOPK / SMOP. Le point avec une diététicienne spécialisée à Grenoble.</description>
+    </item>
+    <item>
+      <title>Endométriose et alimentation : quel régime alimentaire adopter ?</title>
+      <link>https://lucile-diet.fr/conseils/endometriose-et-alimentation.html</link>
+      <guid>https://lucile-diet.fr/conseils/endometriose-et-alimentation.html</guid>
+      <pubDate>Thu, 14 May 2026 08:00:00 +0000</pubDate>
+      <description>Comment l'alimentation peut aider à réduire les douleurs liées à l'endométriose. Le point avec une diététicienne spécialisée à Grenoble.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,15 @@
+{
+  "name": "Lucile Le Pocreau – Diététicienne & Drainage Lymphatique",
+  "short_name": "Lucile Le Pocreau",
+  "description": "Diététicienne-nutritionniste à Grenoble, spécialisée santé de la femme et drainage lymphatique brésilien.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "lang": "fr",
+  "background_color": "#FDFAF6",
+  "theme_color": "#FDFAF6",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

@@ -4,6 +4,7 @@
       --creme:   #FDFAF6;
       --fond:    #F5EFE6;
       --beige:   #C4A882;
+      --beige-clair: #CFB899; /* variante claire du beige, pour texte lisible (4.5:1+) sur fond --profond */
       --brun:    #8B6343;
       --profond: #5C3D2E;
       --texte:   #3A2A1E;
@@ -58,6 +59,7 @@
       text-transform: uppercase;
       color: var(--brun);
       transition: color 0.2s;
+      white-space: nowrap;
     }
     nav ul a:hover { color: var(--profond); }
     .nav-badge-new {
@@ -163,7 +165,7 @@
     .hero-eyebrow {
       display: block;
       font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--beige); margin-bottom: 20px;
+      color: var(--brun); margin-bottom: 20px;
     }
     .hero-title {
       font-family: 'Playfair Display', serif;
@@ -192,7 +194,7 @@
     .hero-scroll {
       position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
       display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: var(--beige); font-size: 0.72rem; letter-spacing: 0.14em;
+      color: var(--brun); font-size: 0.72rem; letter-spacing: 0.14em;
       text-transform: uppercase;
       animation: bob 2.2s ease-in-out infinite;
     }
@@ -204,7 +206,7 @@
     .section-inner { max-width: 960px; margin: 0 auto; }
     .section-label {
       font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--beige); margin-bottom: 12px;
+      color: var(--brun); margin-bottom: 12px;
     }
     .section-title {
       font-family: 'Playfair Display', serif;
@@ -253,7 +255,7 @@
     .apropos-credentials dt { color: var(--profond); font-weight: 400; }
     .apropos-credentials dt::after { content: "\2014"; margin-left: 6px; }
     .apropos-credentials dd { margin: 0; color: var(--brun); }
-    .apropos-ids { font-size: 0.74rem; color: var(--beige); margin-top: 10px; letter-spacing: 0.03em; }
+    .apropos-ids { font-size: 0.74rem; color: var(--brun); margin-top: 10px; letter-spacing: 0.03em; }
     .tag {
       background: var(--creme); border: 1px solid var(--beige); color: var(--brun);
       padding: 6px 16px; border-radius: 20px; font-size: 0.78rem; letter-spacing: 0.06em;
@@ -277,7 +279,7 @@
     }
     .card p { font-size: 0.88rem; line-height: 1.65; }
     .card-link {
-      display: inline-block; margin-top: 12px; font-size: 0.82rem;
+      display: inline-block; margin-top: 12px; padding: 4px 0; font-size: 0.82rem;
       color: var(--brun); text-decoration: none; letter-spacing: 0.03em;
       border-bottom: 1px solid transparent; transition: border-color 0.2s;
     }
@@ -285,10 +287,10 @@
 
     /* ── DRAINAGE ── */
     #drainage { background: var(--profond); color: var(--creme); }
-    #drainage .section-label { color: var(--beige); }
+    #drainage .section-label { color: var(--beige-clair); }
     #drainage .section-title { color: var(--creme); }
-    #drainage .section-title em { color: var(--beige); }
-    #drainage .btn-outline { border-color: var(--beige); color: var(--beige); margin-left: 14px; }
+    #drainage .section-title em { color: var(--beige-clair); }
+    #drainage .btn-outline { border-color: var(--beige-clair); color: var(--beige-clair); margin-left: 14px; }
     #drainage .btn-outline:hover { background: var(--beige); color: var(--profond); }
     .drainage-grid {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -344,7 +346,7 @@
       text-align: right; padding-left: 12px;
     }
     .tarif-cure-badge {
-      background: var(--beige); color: var(--creme); font-size: 0.65rem;
+      background: var(--brun); color: var(--creme); font-size: 0.65rem;
       padding: 2px 8px; border-radius: 20px; margin-left: 6px;
       vertical-align: middle; letter-spacing: 0.05em;
     }
@@ -364,9 +366,9 @@
 
     /* ── CONSEILS ── */
     #conseils { background: var(--profond); color: var(--creme); }
-    #conseils .section-label { color: var(--beige); }
+    #conseils .section-label { color: var(--beige-clair); }
     #conseils .section-title { color: var(--creme); }
-    #conseils .section-title em { color: var(--beige); }
+    #conseils .section-title em { color: var(--beige-clair); }
     .conseils-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
     .conseil-card {
       background: rgba(253,250,246,0.06); border: 1px solid rgba(196,168,130,0.35);
@@ -379,7 +381,7 @@
     }
     .conseil-card p { font-size: 0.84rem; opacity: 0.85; line-height: 1.6; margin: 0; }
     .conseil-card span.conseil-read {
-      font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--beige); margin-top: auto;
+      font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--beige-clair); margin-top: auto;
     }
 
     /* ── FAQ ── */
@@ -420,7 +422,7 @@
     }
     .contact-item-text strong {
       display: block; font-size: 0.78rem; text-transform: uppercase;
-      letter-spacing: 0.1em; color: var(--beige); margin-bottom: 4px;
+      letter-spacing: 0.1em; color: var(--brun); margin-bottom: 4px;
     }
     .contact-item-text span, .contact-item-text a {
       font-size: 0.95rem; color: var(--texte); text-decoration: none;
@@ -437,7 +439,7 @@
     .instagram-cta div span { font-size: 0.8rem; color: var(--brun); }
     .map-embed-wrap { display: flex; flex-direction: column; gap: 10px; }
     .map-link {
-      display: inline-block; font-size: 0.78rem; color: var(--brun);
+      display: inline-block; padding: 4px 0; font-size: 0.78rem; color: var(--brun);
       text-decoration: underline; letter-spacing: 0.06em;
     }
 
@@ -487,6 +489,13 @@
       width: 8px; height: 8px; border-radius: 50%; border: none;
       background: var(--beige); opacity: 0.4; cursor: pointer;
       transition: opacity 0.2s, transform 0.2s; padding: 0;
+      position: relative;
+    }
+    /* Zone cliquable élargie (24px) sans agrandir le point visuel — les points
+       étant très rapprochés (1 par avis), les halos se chevauchent légèrement
+       entre voisins ; ça reste largement mieux que les 8px d'origine. */
+    .reviews-dots button::before {
+      content: ''; position: absolute; inset: -8px;
     }
     .reviews-dots button.active { opacity: 1; transform: scale(1.3); background: var(--brun); }
 
@@ -496,17 +505,25 @@
       text-align: center; padding: 36px 24px;
       font-size: 0.8rem; letter-spacing: 0.05em;
     }
-    footer a { color: var(--beige); text-decoration: none; }
+    footer a { color: var(--beige-clair); text-decoration: none; display: inline-block; padding: 6px 2px; }
     footer .footer-name {
       font-family: 'Playfair Display', serif; font-size: 1.1rem;
       color: var(--creme); margin-bottom: 8px;
     }
 
+    /* ── NAV : bascule sur le burger dès que logo + 7 liens + bouton RDV ne
+       tiennent plus sur une ligne (~1035-1085px selon la largeur du logo).
+       Séparé du breakpoint mobile ci-dessous pour ne pas forcer tout le reste
+       de la page (grilles, sections) en mise en page mobile sur cette plage
+       de largeur "petit écran/tablette" où elles ont encore de la place. ── */
+    @media (max-width: 1100px) {
+      nav ul { display: none; }
+      .burger { display: flex; }
+    }
+
     /* ── RESPONSIVE MOBILE ── */
     @media (max-width: 768px) {
       nav { padding: 14px 20px; }
-      nav ul { display: none; }
-      .burger { display: flex; }
 
       section { padding: 60px 20px; }
 

@@ -108,8 +108,12 @@ if (floatingRdv && hero) {
   }
 
   function buildDots() {
+    // Lire la mise en page AVANT d'écrire dans le DOM (et non l'inverse) :
+    // sinon chaque lecture de offsetWidth/clientWidth dans la boucle force
+    // un recalcul de layout synchrone juste après le innerHTML = ''.
+    const max = maxIndex();
     dotsContainer.innerHTML = '';
-    for (let i = 0; i <= maxIndex(); i++) {
+    for (let i = 0; i <= max; i++) {
       const btn = document.createElement('button');
       btn.setAttribute('aria-label', 'Avis ' + (i + 1));
       btn.setAttribute('role', 'tab');

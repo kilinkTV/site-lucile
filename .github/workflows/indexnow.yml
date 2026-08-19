@@ -1,0 +1,24 @@
+name: IndexNow ping
+
+# Prévient Bing/Yandex à chaque déploiement qu'une page a changé,
+# en soumettant les URL du sitemap via l'API IndexNow.
+# Google n'utilise pas IndexNow : ce job n'a aucun effet sur son indexation.
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Soumettre les URL du sitemap à IndexNow
+        run: |
+          KEY="64f4fe4e295fadd8f78d600c7c71a678"
+          HOST="lucile-diet.fr"
+          URLS=$(grep -oP '(?<=<loc>)[^<]+' sitemap.xml | sed 's/^/"/;s/$/"/' | paste -sd, -)
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"${HOST}\",\"key\":\"${KEY}\",\"keyLocation\":\"https://${HOST}/${KEY}.txt\",\"urlList\":[${URLS}]}"

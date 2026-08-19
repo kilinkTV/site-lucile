@@ -28,23 +28,56 @@
   });
 })();
 
-// ── BURGER MENU ──
+// ── BURGER MENU (absent des pages articles, d'où la garde) ──
 const burger = document.getElementById('burgerBtn');
 const mobileMenu = document.getElementById('mobileMenu');
-burger.addEventListener('click', () => {
-  const isOpen = mobileMenu.classList.toggle('open');
-  burger.classList.toggle('open', isOpen);
-  burger.setAttribute('aria-expanded', isOpen);
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-});
-document.querySelectorAll('.mobile-link, .mobile-rdv').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    burger.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+if (burger && mobileMenu) {
+  burger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
-});
+  document.querySelectorAll('.mobile-link, .mobile-rdv').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+// ── SCROLL FLUIDE POUR LES ANCRES INTERNES (menu, boutons "#...") ──
+// Fait exprès de NE PAS passer par le CSS `scroll-behavior: smooth` global :
+// ça entrait en conflit avec la restauration native du scroll au clic sur
+// "← Retour au site" (voir plus bas). Le fluide est donc appliqué ici, à la main,
+// uniquement sur un clic volontaire vers une ancre — jamais sur history.back().
+(function () {
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    const id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    a.addEventListener('click', function (e) {
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      history.pushState(null, '', '#' + id);
+    });
+  });
+})();
+
+// ── RETOUR AU SITE (pages articles) : revient à la position exacte plutôt qu'en haut de #conseils ──
+(function () {
+  const sameOrigin = document.referrer && document.referrer.indexOf(location.origin) === 0;
+  if (!sameOrigin) return;
+  document.querySelectorAll('.back-link').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (history.length > 1) { e.preventDefault(); history.back(); }
+    });
+  });
+})();
 
 // ── CARROUSEL AVIS (défilement souris/tactile natif) ──
 (function() {

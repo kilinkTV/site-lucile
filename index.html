@@ -427,7 +427,11 @@
       --texte:   #3A2A1E;
     }
 
-    html { scroll-behavior: smooth; }
+    /* scroll-behavior: smooth n'est PAS mis ici en global : ça casse la restauration
+       native du scroll par le navigateur au clic sur "← Retour au site" depuis un article
+       (le navigateur tente d'animer le retour vers l'ancienne position pendant que la page
+       finit de charger, et atterrit ailleurs). Le scroll fluide est géré en JS, uniquement
+       pour les clics sur les liens d'ancrage internes — voir script.js. */
 
     body {
       font-family: 'Lato', sans-serif;

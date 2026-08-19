@@ -231,16 +231,6 @@ footer a { color: var(--beige); text-decoration: none; }
   <p>Lucile Le Pocreau · Diététicienne-nutritionniste · Grenoble</p>
   <p style="margin-top:10px"><a href="/">Accueil</a> · <a href="https://www.doctolib.fr/dieteticien/grenoble/lucile-le-pocreau" target="_blank" rel="noopener">Prendre rendez-vous</a> · <a href="https://www.instagram.com/lucile.diet" target="_blank" rel="noopener">Instagram</a></p>
 </footer>
-<script>
-(function(){
-  var sameOrigin = document.referrer && document.referrer.indexOf(location.origin) === 0;
-  if (!sameOrigin) return;
-  document.querySelectorAll(".back-link").forEach(function(a){
-    a.addEventListener("click", function(e){
-      if (history.length > 1) { e.preventDefault(); history.back(); }
-    });
-  });
-})();
-</script>
+<script src="/script.js"></script>
 </body>
 </html>

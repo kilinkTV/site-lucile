@@ -14,8 +14,8 @@
     return years <= 1 ? 'il y a 1 an' : 'il y a ' + years + ' ans';
   }
 
-  document.querySelectorAll('.review-date[data-date]').forEach(function (el) {
-    var iso = el.getAttribute('data-date');
+  document.querySelectorAll('time.review-date[datetime]').forEach(function (el) {
+    var iso = el.getAttribute('datetime');
     var then = new Date(iso + 'T00:00:00');
     var days = Math.max(0, Math.floor((new Date() - then) / 86400000));
     el.textContent = formatRelativeDate(iso);

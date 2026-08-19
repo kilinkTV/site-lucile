@@ -74,6 +74,8 @@ body { font-family: 'Lato', sans-serif; background: var(--creme); color: var(--t
   font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--brun); text-decoration: none;
 }
+.back-bottom-wrap { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--beige); }
+.back-bottom-wrap a { font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brun); text-decoration: none; }
 .article-wrap { max-width: 720px; margin: 0 auto; padding: 60px 24px 90px; }
 .article-eyebrow { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--beige); margin-bottom: 16px; }
 .article-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--profond); line-height: 1.25; margin-bottom: 20px; }
@@ -150,7 +152,7 @@ footer a { color: var(--beige); text-decoration: none; }
 </script>
 </head>
 <body>
-<nav class="article-nav"><a href="/#conseils">← Retour au site</a></nav>
+<nav class="article-nav"><a href="/#conseils" class="back-link">← Retour au site</a></nav>
 <div class="article-wrap">
   <p class="article-eyebrow">Conseils nutrition</p>
   <h1 class="article-title">SOPK (SMOP) : le rôle de l'alimentation dans l'équilibre glycémique</h1>
@@ -226,10 +228,24 @@ footer a { color: var(--beige); text-decoration: none; }
       </a>
     </div>
   </div>
+  <div class="back-bottom-wrap">
+    <a href="/#conseils" class="back-link">← Retour au site</a>
+  </div>
 </div>
 <footer>
   <p>Lucile Le Pocreau · Diététicienne-nutritionniste · Grenoble</p>
   <p style="margin-top:10px"><a href="/">Accueil</a> · <a href="https://www.doctolib.fr/dieteticien/grenoble/lucile-le-pocreau" target="_blank" rel="noopener">Prendre rendez-vous</a> · <a href="https://www.instagram.com/lucile.diet" target="_blank" rel="noopener">Instagram</a></p>
 </footer>
+<script>
+(function(){
+  var sameOrigin = document.referrer && document.referrer.indexOf(location.origin) === 0;
+  if (!sameOrigin) return;
+  document.querySelectorAll(".back-link").forEach(function(a){
+    a.addEventListener("click", function(e){
+      if (history.length > 1) { e.preventDefault(); history.back(); }
+    });
+  });
+})();
+</script>
 </body>
 </html>

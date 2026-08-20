@@ -317,13 +317,15 @@
       overflow: hidden; height: 420px;
       border: 1px solid rgba(196,168,130,0.3);
     }
+    /* figure/picture n'ont pas de hauteur propre : sans ça, le height:100%
+       de l'image ne se résout contre rien et object-position n'a aucun effet
+       (l'image garde son ratio naturel et se fait rogner par le haut). */
+    .drainage-visual-photo figure,
+    .drainage-visual-photo picture {
+      display: block; width: 100%; height: 100%;
+    }
     .drainage-visual-photo img {
-      /* object-position biaisé vers le bas : la photo (portrait, 1200x1600) est
-         recadrée dans un cadre bien plus large que haut, surtout en mobile
-         (420px de haut en desktop, 260px en mobile). Un centrage par défaut (50%)
-         montre surtout le plafond/la fenêtre et coupe la table de soin, le sujet
-         principal — d'autant plus en mobile où le cadre est plus plat. */
-      width: 100%; height: 100%; object-fit: cover; object-position: 50% 85%; display: block;
+      width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block;
     }
 
     /* ── TARIFS ── */

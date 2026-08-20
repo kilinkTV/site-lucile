@@ -11,7 +11,14 @@
 <meta name="description" content="Cette page n'existe pas ou plus. Retrouvez le site de Lucile Le Pocreau, diététicienne-nutritionniste à Grenoble."/>
 <meta name="robots" content="noindex, follow"/>
 <link rel="canonical" href="https://lucile-diet.fr/"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- Chargement non bloquant : media="print" télécharge sans bloquer le rendu,
+     font-swap.js bascule en media="all" une fois le HTML parsé (voir ce fichier). -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap"/>
+<link id="gfonts-link" rel="stylesheet" media="print" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap"/></noscript>
+<script src="/font-swap.js" defer></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {

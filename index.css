@@ -376,6 +376,8 @@
     }
     .tarifs-cta { text-align: center; margin-top: 48px; }
     .tarifs-cta p { margin-bottom: 20px; font-size: 0.95rem; }
+    .tarifs-cta .tarifs-cadeau { margin: 22px 0 0; font-size: 0.92rem; }
+    .tarifs-cadeau a { color: var(--profond); font-weight: 700; text-underline-offset: 3px; }
 
     /* ── CONSEILS ── */
     #conseils { background: var(--profond); color: var(--creme); }
@@ -524,12 +526,15 @@
       color: var(--creme); margin-bottom: 8px;
     }
 
-    /* ── NAV : bascule sur le burger dès que logo + 7 liens + bouton RDV ne
-       tiennent plus sur une ligne (~1035-1085px selon la largeur du logo).
+    /* ── NAV : bascule sur le burger dès que logo + 8 liens + bouton RDV ne
+       tiennent plus sur une ligne (~1200-1250px selon la largeur du logo).
        Séparé du breakpoint mobile ci-dessous pour ne pas forcer tout le reste
        de la page (grilles, sections) en mise en page mobile sur cette plage
        de largeur "petit écran/tablette" où elles ont encore de la place. ── */
-    @media (max-width: 1100px) {
+    @media (max-width: 1500px) {
+      nav ul { gap: 22px; }
+    }
+    @media (max-width: 1280px) {
       nav ul { display: none; }
       .burger { display: flex; }
     }

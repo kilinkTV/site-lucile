@@ -1,0 +1,27 @@
+{
+  "name": "lucile-cartes-cadeaux",
+  "version": "1.0.0",
+  "description": "Cartes cadeaux lucile-diet.fr (Worker Cloudflare)",
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "dev:site": "node dev-site.mjs",
+    "db:local": "wrangler d1 execute lucile-cartes-cadeaux --local --file=schema.sql",
+    "db:remote": "wrangler d1 execute lucile-cartes-cadeaux --remote --file=schema.sql",
+    "deploy": "wrangler deploy"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@expo-google-fonts/lato": "^0.4.1",
+    "@expo-google-fonts/playfair-display": "^0.4.2",
+    "@pdf-lib/fontkit": "^1.1.1",
+    "jsqr": "^1.4.0",
+    "pdf-lib": "^1.17.1",
+    "qrcode-generator": "^2.0.4",
+    "wrangler": "^4.137.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "workerd@1.20260921.1": true
+  },
+  "private": true
+}

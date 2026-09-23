@@ -1,0 +1,38 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lucile-cartes-cadeaux",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-01",
+
+  // Pas d'URL *.workers.dev : le Worker n'est joignable que par les routes ci-dessous
+  // (sinon l'app admin serait accessible sans passer par Cloudflare Access).
+  "workers_dev": false,
+  "preview_urls": false,
+
+  "routes": [
+    { "pattern": "lucile-diet.fr/api/*", "zone_name": "lucile-diet.fr" },
+    { "pattern": "admin.lucile-diet.fr", "custom_domain": true }
+  ],
+
+  // App web de Lucile. run_worker_first : chaque fichier passe par la vérification d'accès.
+  "assets": { "directory": "./admin", "binding": "ASSETS", "run_worker_first": true },
+
+  "d1_databases": [
+    { "binding": "DB", "database_name": "lucile-cartes-cadeaux", "database_id": "6721f10d-321a-452f-b5bd-bb7ab979fdb8" }
+  ],
+
+  "vars": {
+    "SITE_URL": "https://lucile-diet.fr",
+    "ADMIN_HOST": "admin.lucile-diet.fr",
+    "ADMIN_EMAIL": "lepocreau.lucile@gmail.com",
+    "MAIL_FROM": "Lucile Le Pocreau <cartes-cadeaux@lucile-diet.fr>",
+    // Application Cloudflare Access « Cartes cadeaux Lucile » (Zero Trust) :
+    "ACCESS_TEAM_DOMAIN": "orange-paper-6469.cloudflareaccess.com",
+    "ACCESS_AUD": "d3a510deca465f130b404947690014cec7b04446198374fd733eb53da9868afb"
+  },
+
+  // Secrets (jamais dans ce fichier) : npx wrangler secret put <NOM>
+  //   STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, RESEND_API_KEY, CARD_SIGNING_KEY
+
+  "observability": { "enabled": true }
+}

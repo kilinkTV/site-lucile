@@ -43,3 +43,15 @@ npm run dev:site        # site sur http://localhost:8080, /api relayé vers le W
 7. Cloudflare Zero Trust → Access → Applications : application « self-hosted » sur `admin.lucile-diet.fr`,
    politique « Allow » limitée à `lepocreau.lucile@gmail.com` (connexion par code e-mail).
    Reporter le domaine d'équipe (`xxx.cloudflareaccess.com`) et l'« Application Audience (AUD) » dans `wrangler.jsonc`, puis `npm run deploy`.
+
+## Cache Cloudflare (important)
+
+Une règle de cache garde les `.css`, `.js`, images et polices **1 mois** chez Cloudflare.
+Après toute modification d'un de ces fichiers, changer le numéro de version dans son URL
+(ex. `carte-cadeau.css?v=2` → `?v=3` dans les pages HTML) ou purger le cache Cloudflare.
+
+## Achats de test
+
+Tant que `STRIPE_SECRET_KEY` est une clé de test, le site public refuse les achats
+(la carte 4242 donnerait sinon de vraies cartes cadeaux). Pour tester de bout en bout :
+`node dev-site.mjs --prod` puis http://localhost:8080 (jeton `TEST_CHECKOUT_TOKEN` lu dans `.dev.vars`).

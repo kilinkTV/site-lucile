@@ -87,8 +87,6 @@
 .gc-actions .gc-btn { width: auto; }
 .gc-pdf-fallback { flex-basis: 100%; font-size: .88rem; margin: 0; }
 .gc-cards { display: grid; gap: 22px; }
-.gc-pro { margin-top: 40px; font-size: .8rem; text-align: center; }
-.gc-pro a { color: var(--brun); }
 .gc-spinner { width: 22px; height: 22px; border: 3px solid var(--beige-plus-clair); border-top-color: var(--profond); border-radius: 50%; animation: gc-spin 1s linear infinite; display: inline-block; vertical-align: middle; margin-right: 10px; }
 @keyframes gc-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .gc-spinner { animation-duration: 3s; } }

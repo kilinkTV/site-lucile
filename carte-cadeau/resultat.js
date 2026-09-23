@@ -39,7 +39,6 @@
     if (card.status === 'valide') nodes.push(h('div', { class: 'gc-actions' }, dl));
     if (card.status === 'valide' && !isMerci) nodes.push(h('p', { text: 'Pour utiliser la carte, réservez sur Doctolib ou au 07 67 95 57 09 en indiquant son numéro, puis présentez-la le jour du soin.' }));
     nodes.push(h('div', { class: 'gc-cards' }, G.renderRecto(card), G.renderVerso(card)));
-    if (!isMerci) nodes.push(h('p', { class: 'gc-pro' }, h('a', { href: 'https://admin.lucile-diet.fr/#/carte/' + encodeURIComponent(card.code), rel: 'nofollow', text: 'Espace praticienne' })));
     root.replaceChildren.apply(root, nodes);
   }
 

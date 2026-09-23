@@ -152,3 +152,21 @@
   .gc-wrap, .gc-result { padding: 40px 16px 70px; }
   .gc-actions .gc-btn { width: 100%; }
 }
+
+/* ── Anciens navigateurs sans « container queries » (iOS < 16, Android < 2022) :
+      les tailles en cqw sont ignorées, on bascule sur une carte simple et lisible
+      (le PDF, lui, est identique partout). ── */
+@supports not (container-type: inline-size) {
+  .gc-card, .gc-card--verso { aspect-ratio: auto; grid-template-columns: 1fr; font-size: 14px; }
+  .gc-card .gc-band { padding: 16px; flex-direction: row; align-items: center; gap: 14px; }
+  .gc-card .gc-logo { width: 64px; }
+  .gc-card .gc-band h2 { font-size: 22px; }
+  .gc-card .gc-main { padding: 16px 16px 28px; }
+  .gc-card .gc-for { font-size: 22px; white-space: normal; }
+  .gc-card .gc-presta, .gc-card--verso h3 { font-size: 18px; }
+  .gc-card .gc-amount-big { font-size: 32px; }
+  .gc-card .gc-qr svg { width: 72px; height: 72px; }
+  .gc-card .gc-steps li { grid-template-columns: 26px 1fr; }
+  .gc-card .gc-steps li::before { width: 26px; height: 26px; }
+  .gc-card .gc-micro { font-size: 6px; }
+}

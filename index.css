@@ -293,7 +293,9 @@
     #drainage .section-label { color: var(--beige-clair); }
     #drainage .section-title { color: var(--creme); }
     #drainage .section-title em { color: var(--beige-clair); }
-    #drainage .btn-outline { border-color: var(--beige-clair); color: var(--beige-clair); margin-left: 14px; }
+    #drainage .btn-outline { border-color: var(--beige-clair); color: var(--beige-clair); }
+    .drainage-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .drainage-actions a { margin: 0; }
     #drainage .btn-outline:hover { background: var(--beige); color: var(--profond); }
     .drainage-grid {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -552,6 +554,7 @@
         margin: 0 0 12px 0; padding: 15px 24px;
       }
       .btn-outline { margin-left: 0; }
+      .drainage-actions { flex-direction: column; gap: 12px; }
 
       .apropos-grid { grid-template-columns: 1fr; gap: 32px; }
       .apropos-photo-placeholder { aspect-ratio: 1/1; border-radius: 12px 60px 12px 60px; }

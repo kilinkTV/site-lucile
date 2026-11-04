@@ -17,6 +17,7 @@ body { font-family: 'Lato', sans-serif; background: var(--creme); color: var(--t
 .article-eyebrow { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--beige); margin-bottom: 16px; }
 .article-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--profond); line-height: 1.25; margin-bottom: 20px; }
 .article-meta { font-size: 0.82rem; color: var(--brun); margin-bottom: 40px; }
+.article-meta a { color: inherit; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
 .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--profond); margin: 40px 0 16px; }
 .article-body p { font-size: 1rem; margin-bottom: 18px; }
 .article-body ul { margin: 0 0 18px 22px; }

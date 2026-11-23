@@ -33,6 +33,12 @@ async function stripe(env, method, path, params) {
 // (tests de bout en bout avant publication) ; en production c'est toujours SITE_URL.
 const LOCAL_TEST_SITE = 'http://localhost:8080';
 
+// Offres sur lesquelles le champ « code promo » de Stripe est proposé.
+// Les produits Stripe étant créés à la volée (price_data), un coupon ne peut pas être
+// limité à certains produits côté Stripe : la restriction se fait donc ici.
+// Les cures et le montant libre n'affichent pas le champ.
+const PROMO_OFFERS = ['corps', 'zone'];
+
 export function createCheckoutSession(env, order, { label, detail }, returnBase) {
   const testKey = /^(sk|rk)_test_/.test(env.STRIPE_SECRET_KEY.trim());
   const base = testKey && returnBase === LOCAL_TEST_SITE ? LOCAL_TEST_SITE : env.SITE_URL;
@@ -59,6 +65,8 @@ export function createCheckoutSession(env, order, { label, detail }, returnBase)
       recipient_name: order.recipient_name,
       message: order.message || '',
     },
+    // La valeur de la carte reste celle de l'offre (metadata.amount_cents), même si un code promo réduit le prix payé.
+    allow_promotion_codes: order.kind === 'prestation' && PROMO_OFFERS.includes(order.offer) ? true : undefined,
     payment_intent_data: { description: `Carte cadeau pour ${order.recipient_name}` },
     success_url: `${base}/carte-cadeau/merci.html?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${base}/carte-cadeau.html?annule=1`,
